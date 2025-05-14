@@ -88,4 +88,5 @@ The primary goal of this academic endeavor is to investigate and demonstrate how
 ## Disclaimer
 
 This project is developed for academic and experimental purposes only. The use of copyrighted music (Coldplay songs) is solely for the purpose of research and demonstration within this non-commercial project. There is no intention to infringe upon any music copyrights. Users are expected to use their own legally obtained audio files for experimentation. The developers do not claim ownership of any copyrighted music used and are not responsible for the misuse of this software.
+
 ---
