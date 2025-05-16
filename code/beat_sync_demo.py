@@ -108,14 +108,15 @@ class AudioAnalyzer:
             })
         
         # Extract overall tempo for the entire song
-        tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
+        onset_env = librosa.onset.onset_strength(y=y, sr=sr)
+        tempo, _ = librosa.beat.beat_track(onset_envelope=onset_env, sr=sr)
         # Fix: Convert tempo to a scalar if it's an array
         if isinstance(tempo, np.ndarray):
             tempo = float(tempo.item())
         print(f"Overall song tempo: {tempo:.1f} BPM")
         
         # Detect beats for the entire song
-        _, beat_frames = librosa.beat.beat_track(y=y, sr=sr)
+        _, beat_frames = librosa.beat.beat_track(onset_envelope=onset_env, sr=sr)
         beat_times = librosa.frames_to_time(beat_frames, sr=sr)
         
         return segments, sr, beat_times, tempo
